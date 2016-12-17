@@ -1,0 +1,13 @@
+{
+    "env": {
+        "browser": true,
+        "jquery" : true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-extra-semi": 0
+    }
+}
