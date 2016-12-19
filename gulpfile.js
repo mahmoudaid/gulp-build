@@ -15,6 +15,7 @@ var gulp = require('gulp'),
 	cssnano = require('gulp-cssnano'),
 	maps = require('gulp-sourcemaps'),
 	useref = require('gulp-useref'),
+	replace = require('gulp-replace'),
 	imagemin = require('gulp-imagemin'),
 	del = require('del'),
 	browserSync = require('browser-sync').create();
@@ -78,6 +79,7 @@ gulp.task('images', function() {
 gulp.task('html', ['scripts', 'styles'],function () {
     return gulp.src(options.src+'/index.html')
 	.pipe(useref())
+	.pipe(replace('images/', 'content/'))
 	.pipe(gulp.dest(options.dist));
 });
 
